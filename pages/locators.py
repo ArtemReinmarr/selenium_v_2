@@ -12,3 +12,4 @@ class ProductPageLocators():
     BASKET_PRODUCT_NAME = (By.CSS_SELECTOR, ".alertinner strong")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p.price_color")
     BASKET_PRODUCT_PRICE = (By.CSS_SELECTOR, ".alertinner p strong")
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")

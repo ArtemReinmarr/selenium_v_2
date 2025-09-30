@@ -1,13 +1,15 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 from selenium.webdriver.common.by import By
+import pytest
 
 class ProductPage(BasePage):
     def should_be_add_to_basket_button(self):
-        assert self.is_element_present(By.CSS_SELECTOR, ".btn-add-to-basket"), f"No Add to basket button"
-
+        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET_BUTTON), f"No Add to basket button"
+    
     def add_to_basket(self):
-        self.browser.find_element(By.CSS_SELECTOR, ".btn-add-to-basket").click()
+        self.should_be_add_to_basket_button()
+        self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
     def the_same_names_of_product(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
